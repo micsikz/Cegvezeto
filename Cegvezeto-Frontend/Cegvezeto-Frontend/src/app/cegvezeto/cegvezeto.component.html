@@ -1,8 +1,26 @@
-<p>
-Hello && Alma: {{ alma }} && Wheel:{{ wheel }} htmlWheel: {{ htmlWheel }} Chasis: {{ chasis }} 
-Futsz?????
-</p>
 <div>
-  <input type="number" [(ngModel)]="htmlWheel" name="htmlWheel">
-  <button (click)="buyWheel()">Buy</button>
+  <input type="number" [(ngModel)]="htmlWheel" name="htmlWheel" min="0">
+  <button (click)="buyWheel()">Buy wheel</button>
+  <input type="number" [(ngModel)]="htmlChasis" name="htmlChasis" min="0">
+  <button (click)="buyChasis()">Buy chasis</button>
+  <input type="number" [(ngModel)]="htmlEngin" name="htmlEngin" min="0">
+  <button (click)="buyEngin()">Buy engin</button>
+</div>
+<p>javaWheel: {{ javaWheel }} && javaChasis: {{ javaChasis }} && javaEngin: {{ javaEngin }}</p>
+<p>htmlWheel: {{ htmlWheel }} && htmlChasis: {{ htmlChasis }} && htmlEngin: {{ htmlEngin }} </p>
+
+<div>
+  <input type="number" [(ngModel)]="htmlWorkers" name="htmlWorkers" min="0">
+  <button (click)="buyWorkers()">Hire Worker</button>
+  <button (click)="buyWorkers()">Dismiss Worker</button>
+javaWorkers: {{ javaWorkers }}
+htmlWorkers: {{ htmlWorkers }}
+</div>
+
+<div>
+  <input type="number" [(ngModel)]="htmlAdvertisement" name="htmlAdvertisement" min="0">
+  <button (click)="buyAdvertisement()">Buy Advertisement</button>
+  <button (click)="buyAdvertisement()">Sell Advertisement</button>
+  javaAdvertisement: {{ javaAdvertisement }}
+  htmlWorkers: {{ htmlWorkers }}
 </div>

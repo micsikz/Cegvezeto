@@ -17,9 +17,20 @@ export class GameService {
   public buyWheel(htmlWheel: number) {
     return this.httpClient.post(this.baseUrl + '/game/buy-wheel', + htmlWheel);
   }
-   
+
   public getChasis() {
-      return this.httpClient.get(this.baseUrl + '/game/buy-chasis');
-    }
-  
+    return this.httpClient.get(this.baseUrl + '/game/buy-chasis');
+  }
+
+  public getEngin() {
+    return this.httpClient.get(this.baseUrl + '/game/buy-engin');
+  }
+
+  public getWorkers() {
+    return this.httpClient.get(this.baseUrl + '/game/buy-workers');
+  }
+
+  public getAdvertisement() {
+    return this.httpClient.get(this.baseUrl + '/game/buy-Advertisement');
+  }
 }
