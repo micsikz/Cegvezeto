@@ -1,0 +1,2 @@
+# Cegvezeto
+Simple game
