@@ -13,14 +13,28 @@
   <input type="number" [(ngModel)]="htmlWorkers" name="htmlWorkers" min="0">
   <button (click)="buyWorkers()">Hire Worker</button>
   <button (click)="buyWorkers()">Dismiss Worker</button>
-javaWorkers: {{ javaWorkers }}
-htmlWorkers: {{ htmlWorkers }}
+  <p>javaWorkers: {{ javaWorkers }}</p>
+  <p>htmlWorkers: {{ htmlWorkers }}</p>
 </div>
 
 <div>
   <input type="number" [(ngModel)]="htmlAdvertisement" name="htmlAdvertisement" min="0">
   <button (click)="buyAdvertisement()">Buy Advertisement</button>
   <button (click)="buyAdvertisement()">Sell Advertisement</button>
-  javaAdvertisement: {{ javaAdvertisement }}
-  htmlWorkers: {{ htmlWorkers }}
+  <p>javaAdvertisement: {{ javaAdvertisement }}</p>
+  <p>htmlAdvertisement: {{ htmlAdvertisement }}</p>
 </div>
+<table>
+  <tr>
+    <td>Egyenleg</td>
+    <td>{{ javaWheel }}</td>
+  </tr>
+  <tr>
+    <td>Előző havi</td>
+    <td>500</td>
+  </tr>
+  <tr>
+    <td>Változás</td>
+    <td>1000</td>
+  </tr>
+</table>

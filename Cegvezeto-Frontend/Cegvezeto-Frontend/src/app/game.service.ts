@@ -15,7 +15,7 @@ export class GameService {
   }
 
   public buyWheel(htmlWheel: number) {
-    return this.httpClient.post(this.baseUrl + '/game/buy-wheel', + htmlWheel);
+    return this.httpClient.post(this.baseUrl + '/game/buy-wheele', + htmlWheel);
   }
 
   public getChasis() {
@@ -31,6 +31,6 @@ export class GameService {
   }
 
   public getAdvertisement() {
-    return this.httpClient.get(this.baseUrl + '/game/buy-Advertisement');
+    return this.httpClient.get(this.baseUrl + '/game/buy-advertisement');
   }
 }

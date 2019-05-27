@@ -10,12 +10,12 @@ export class CegvezetoComponent implements OnInit {
 
   constructor(private gameService: GameService) { }
 
-  javaWheel: number;
+  javaWheel: any;
   htmlWheel: number;
-  
+
   javaChasis: number;
   htmlChasis: number;
-  
+
   javaEngin: number;
   htmlEngin: number;
 
@@ -30,41 +30,46 @@ export class CegvezetoComponent implements OnInit {
     this.gameService.buyWheel(this.htmlWheel).subscribe(
       (wheel: any) => {
         console.log(wheel);
+        this.javaWheel = wheel;
       }
     );
   }
 
+  /*ngOnChanges(changes: any) {
+    changes.javaWheel;
+  }*/
+
   ngOnInit() {
     this.gameService.getWheel().subscribe(
-      (wheel: any) => {
+      (wheel: number) => {
         this.javaWheel = wheel;
         (console.log(this.javaWheel));
       }
     );
 
     this.gameService.getChasis().subscribe(
-      (chasis: any) => {
+      (chasis: number) => {
         this.javaChasis = chasis;
         console.log(this.javaChasis);
       }
     );
 
     this.gameService.getEngin().subscribe(
-      (engin: any) => {
+      (engin: number) => {
         this.javaEngin = engin;
         console.log(this.javaEngin);
       }
     );
 
     this.gameService.getWorkers().subscribe(
-      (workers: any) => {
+      (workers: number) => {
         this.javaWorkers = workers;
         console.log(this.javaWorkers);
       }
     );
 
     this.gameService.getAdvertisement().subscribe(
-      (advertisement: any) => {
+      (advertisement: number) => {
         this.javaAdvertisement = advertisement;
         console.log(this.javaAdvertisement);
       }
