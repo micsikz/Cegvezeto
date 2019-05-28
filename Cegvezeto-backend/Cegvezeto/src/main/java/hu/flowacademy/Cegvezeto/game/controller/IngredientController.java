@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "game")
-public class gameController {
+@RequestMapping(path = "ingredient")
+public class IngredientController {
 
     @Autowired
     private Logic logic;
@@ -45,18 +45,5 @@ public class gameController {
         return logic.javaEngin();
     }
 
-
-    @CrossOrigin(origins = "*")
-    @GetMapping("/buy-workers")
-    public int javaWorkers() {
-        return logic.javaWorkers();
-    }
-
-
-    @CrossOrigin(origins = "*")
-    @GetMapping("/buy-advertisement")
-    public int javaAdvertisement() {
-        return logic.javaAdvertisement();
-    }
 
 }

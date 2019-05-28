@@ -1,0 +1,10 @@
+<div>
+  <input type="number" [(ngModel)]="htmlProduction" name="htmlProduction" min="0">
+  <button (click)="production()">Production</button>
+  <p>javaCar: {{ javaCar}}</p>
+  <p>htmlProduction: {{ htmlProduction }}</p>
+</div>
+
+<div *ngIf="visible">
+<app-sell (sendSellIntArray)="addCar($event)"></app-sell>
+</div>

@@ -10,7 +10,7 @@ export class CegvezetoComponent implements OnInit {
 
   constructor(private gameService: GameService) { }
 
-  javaWheel: any;
+  javaWheel: number;
   htmlWheel: number;
 
   javaChasis: number;
@@ -19,12 +19,11 @@ export class CegvezetoComponent implements OnInit {
   javaEngin: number;
   htmlEngin: number;
 
-  javaWorkers: number;
-  htmlWorkers: number;
-
-  javaAdvertisement: number;
-  htmlAdvertisement: number;
-
+  add(value: number[]) {
+    this.javaWheel = value[0];
+    this.javaChasis = value[1];
+    this.javaEngin = value[2];
+  }
 
   buyWheel() {
     this.gameService.buyWheel(this.htmlWheel).subscribe(
@@ -35,9 +34,24 @@ export class CegvezetoComponent implements OnInit {
     );
   }
 
-  /*ngOnChanges(changes: any) {
-    changes.javaWheel;
-  }*/
+  buyChasis() {
+    this.gameService.buyChasis(this.htmlChasis).subscribe(
+      (chasis: any) => {
+        console.log(chasis);
+        this.javaChasis = chasis;
+      }
+    );
+  }
+
+  buyEngin() {
+    this.gameService.buyEngin(this.htmlEngin).subscribe(
+      (engin: any) => {
+        console.log(engin);
+        this.javaEngin = engin;
+      }
+    );
+  }
+
 
   ngOnInit() {
     this.gameService.getWheel().subscribe(
@@ -61,21 +75,6 @@ export class CegvezetoComponent implements OnInit {
       }
     );
 
-    this.gameService.getWorkers().subscribe(
-      (workers: number) => {
-        this.javaWorkers = workers;
-        console.log(this.javaWorkers);
-      }
-    );
-
-    this.gameService.getAdvertisement().subscribe(
-      (advertisement: number) => {
-        this.javaAdvertisement = advertisement;
-        console.log(this.javaAdvertisement);
-      }
-    );
   }
-
-  
 
 }

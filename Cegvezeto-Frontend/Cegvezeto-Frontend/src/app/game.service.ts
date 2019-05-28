@@ -10,27 +10,28 @@ export class GameService {
 
   public baseUrl: string = '//localhost:8080';
 
-  public getWheel() {
-    return this.httpClient.get(this.baseUrl + '/game/buy-wheel');
+  public buyChasis(htmlChasis: number) {
+    return this.httpClient.post(this.baseUrl + '/ingredient/buy-chasise', + htmlChasis);
   }
 
   public buyWheel(htmlWheel: number) {
-    return this.httpClient.post(this.baseUrl + '/game/buy-wheele', + htmlWheel);
+    return this.httpClient.post(this.baseUrl + '/ingredient/buy-wheele', + htmlWheel);
+  }
+
+  public buyEngin(htmlEngin: number) {
+    return this.httpClient.post(this.baseUrl + '/ingredient/buy-engine', + htmlEngin);
+  }
+
+  public getWheel() {
+    return this.httpClient.get(this.baseUrl + '/ingredient/buy-wheel');
   }
 
   public getChasis() {
-    return this.httpClient.get(this.baseUrl + '/game/buy-chasis');
+    return this.httpClient.get(this.baseUrl + '/ingredient/buy-chasis');
   }
 
   public getEngin() {
-    return this.httpClient.get(this.baseUrl + '/game/buy-engin');
+    return this.httpClient.get(this.baseUrl + '/ingredient/buy-engin');
   }
 
-  public getWorkers() {
-    return this.httpClient.get(this.baseUrl + '/game/buy-workers');
-  }
-
-  public getAdvertisement() {
-    return this.httpClient.get(this.baseUrl + '/game/buy-advertisement');
-  }
 }

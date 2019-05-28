@@ -6,11 +6,21 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CegvezetoComponent } from './cegvezeto/cegvezeto.component';
+import { WorkerComponent } from './worker/worker.component';
+import { AdvertisementComponent } from './advertisement/advertisement.component';
+import { ProductionComponent } from './production/production.component';
+import { SellComponent } from './sell/sell.component';
+import { AccountingComponent } from './accounting/accounting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CegvezetoComponent
+    CegvezetoComponent,
+    WorkerComponent,
+    AdvertisementComponent,
+    ProductionComponent,
+    SellComponent,
+    AccountingComponent
   ],
   imports: [
     BrowserModule,

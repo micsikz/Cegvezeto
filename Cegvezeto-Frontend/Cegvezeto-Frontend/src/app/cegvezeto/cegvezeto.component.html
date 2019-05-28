@@ -9,21 +9,7 @@
 <p>javaWheel: {{ javaWheel }} && javaChasis: {{ javaChasis }} && javaEngin: {{ javaEngin }}</p>
 <p>htmlWheel: {{ htmlWheel }} && htmlChasis: {{ htmlChasis }} && htmlEngin: {{ htmlEngin }} </p>
 
-<div>
-  <input type="number" [(ngModel)]="htmlWorkers" name="htmlWorkers" min="0">
-  <button (click)="buyWorkers()">Hire Worker</button>
-  <button (click)="buyWorkers()">Dismiss Worker</button>
-  <p>javaWorkers: {{ javaWorkers }}</p>
-  <p>htmlWorkers: {{ htmlWorkers }}</p>
-</div>
 
-<div>
-  <input type="number" [(ngModel)]="htmlAdvertisement" name="htmlAdvertisement" min="0">
-  <button (click)="buyAdvertisement()">Buy Advertisement</button>
-  <button (click)="buyAdvertisement()">Sell Advertisement</button>
-  <p>javaAdvertisement: {{ javaAdvertisement }}</p>
-  <p>htmlAdvertisement: {{ htmlAdvertisement }}</p>
-</div>
 <table>
   <tr>
     <td>Egyenleg</td>
@@ -38,3 +24,9 @@
     <td>1000</td>
   </tr>
 </table>
+
+<app-worker></app-worker>
+<app-advertisement></app-advertisement>
+<app-production (sendProductionIntArray)="add($event)"></app-production>
+<app-sell></app-sell>
+<app-accounting></app-accounting>
