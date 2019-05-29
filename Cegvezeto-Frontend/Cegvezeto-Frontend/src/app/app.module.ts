@@ -11,6 +11,7 @@ import { AdvertisementComponent } from './advertisement/advertisement.component'
 import { ProductionComponent } from './production/production.component';
 import { SellComponent } from './sell/sell.component';
 import { AccountingComponent } from './accounting/accounting.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AccountingComponent } from './accounting/accounting.component';
     AdvertisementComponent,
     ProductionComponent,
     SellComponent,
-    AccountingComponent
+    AccountingComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

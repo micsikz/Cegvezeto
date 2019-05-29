@@ -1,0 +1,26 @@
+<header>
+    <h1 class="factoryName"> {{ factoryName }}</h1>
+    <h3 id="date"> {{ today | date }}</h3>
+    <ul class="list">
+      <li>
+        <button name="accountingButton" (click)="goToAccounting()">Accounting</button>
+      </li>
+      <li>
+        <button name="advertisementButton" (click)="goToAdvertisement()">Advertisement</button>
+      </li>
+      <li>
+        <button name="ingredientsButton" (click)="goToIngredients()">Ingredients</button>
+      </li>
+      <li>
+        <button name="productionButton" (click)="goToProduction()">Production</button>
+      </li>
+      <li>
+        <button name="sellButton" (click)="goToSell()">Sell</button>
+        </li>
+      <li>
+        <button name="workerButton" (click)="goToWorker()">Workers</button>
+          </li>
+    </ul>
+  </header>
+
+ <button (click)="plusMonth()">aaaa</button>

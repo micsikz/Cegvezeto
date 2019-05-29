@@ -1,0 +1,22 @@
+.list {           
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 2px brown;
+  overflow: hidden;
+  background-color: rgb(185, 132, 96);
+  display: flex;
+  width: 900px;
+  margin: auto;
+  justify-content: space-around;
+}
+
+.factoryName {
+  display: flex;
+  justify-content: center
+}
+
+#date {
+  display: flex;
+  justify-content: center
+}
