@@ -9,11 +9,16 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Logic {
 
     Company company = new Company(1000000, 0, LocalDate.now());
-    Store store = new Store(666, 250, 15,0);
+    Store store = new Store(16, 16, 16,16);
     Advertisement advertisement = new Advertisement( 2);
     Ingredient ingredient = new Ingredient();
     Workers workers = new Workers(2, 0);
 
+    int monthAdvertisingCosts;
+    int monthWorkersWages;
+    double randomPlusReklam;
+    int realselling;
+    int monthIncom;
 
     public int hiringWorkers(int n) {
         if(company.getCompanyMoney() >= (workers.getWage()*n)) {
@@ -165,66 +170,29 @@ public class Logic {
         return advertisement.getAdvertisementNumber();
     }
 
-    /*public void sell(int quantity, int sellingPrice) {
-        if(quantity <= store.getStoreCar()) {
-            if (sellingPrice <= ((ingredient.getEngin() + ingredient.getChasis() + (ingredient.getWheel())*4)*2.5)) { // Az alapanyagok max. 250%-ért lehet eladni terméket
-                company.setMonth(company.getMonth().plusMonths(1));
-                System.out.println(company.getMonth());
-                company.setCompanyMoney(company.getCompanyMoney() - (advertisement.getAdvertisementPrice()*advertisement.getAdvertisementNumber())); // Levonjuk a havi reklámköltséget
-                company.setCompanyMoney(company.getCompanyMoney() - (workers.getWorkersNumber()*workers.getWage()));    // Levonjuk a havi rbérköltséget
-
-                double random = (double)company.getSellingRandomNumber();
-                double reklam = (double)advertisement.getAdvertisementBoost()*advertisement.getAdvertisementNumber();
-                double randomPlusReklam = random + reklam;
-                if(randomPlusReklam > 100) {
-                    randomPlusReklam = 100;
-
-                }
-
-                double sellingquantity2 = quantity*(randomPlusReklam)/100;
-                int realselling = (int)sellingquantity2;
-                int monthIncom = realselling*sellingPrice;
-                company.setCompanyMoney(company.getCompanyMoney()+(realselling*sellingPrice));
-                System.out.println("random:" + company.getSellingRandomNumber() + " " + random +
-                        " reklám:" + reklam + " sellingquantity2:" + sellingquantity2 +
-                        " realselling:" + realselling +
-                        " randomPlusReklám:" + randomPlusReklam);
-                System.out.println("storeCar:" + store.getStoreCar());
-                store.setStoreCar(store.getStoreCar()-realselling);
-                System.out.println("storeCar: " + store.getStoreCar());
-                System.out.println("Sikeresen eladtál " + realselling + "db autót! A havi bevételed:" + monthIncom);
-
-            } else {
-                double prise = (ingredient.getEngin() + ingredient.getChasis() + (ingredient.getWheel()*4))*2.5;
-                System.out.println("Túl drágán akarod eladni az autót! Az autó maximum ára " + prise + "fabatka lehet");
-            }
-        } else {
-            System.out.println("Nincs " + quantity + "db autód, amit eladhatnál!");
-        }
-    }*/
 
    public int[] sell(int sellingPrice) {
             if (sellingPrice <= ((ingredient.getEngin() + ingredient.getChasis() + (ingredient.getWheel())*4)*2.5)) { // Az alapanyagok max. 250%-ért lehet eladni terméket
                 company.setMonth(company.getMonth().plusMonths(1));
                 System.out.println(company.getMonth());
 
-                int monthAdvertisingCosts = advertisement.getAdvertisementPrice()*advertisement.getAdvertisementNumber();
-                int monthWorkersWages = workers.getWorkersNumber()*workers.getWage();
+                monthAdvertisingCosts = advertisement.getAdvertisementPrice()*advertisement.getAdvertisementNumber();
+                monthWorkersWages = workers.getWorkersNumber()*workers.getWage();
                 company.setCompanyMoney(company.getCompanyMoney() - (advertisement.getAdvertisementPrice()*advertisement.getAdvertisementNumber())); // Levonjuk a havi reklámköltséget
                 company.setCompanyMoney(company.getCompanyMoney() - (workers.getWorkersNumber()*workers.getWage()));    // Levonjuk a havi rbérköltséget
 
 
                 double random = (double)ThreadLocalRandom.current().nextInt(100);
                 double reklam = (double)advertisement.getAdvertisementBoost()*advertisement.getAdvertisementNumber();
-                double randomPlusReklam = random + reklam;
+                randomPlusReklam = random + reklam;
                 if(randomPlusReklam > 100) {
                     randomPlusReklam = 100;
 
                 }
 
                 double sellingquantity2 = store.getStoreCar()*(randomPlusReklam)/100;
-                int realselling = (int)sellingquantity2;
-                int monthIncom = realselling*sellingPrice;
+                realselling = (int)sellingquantity2;
+                monthIncom = realselling*sellingPrice;
                 company.setCompanyMoney(company.getCompanyMoney()+(realselling*sellingPrice));
                 System.out.println("random:" + random + " " + random +
                         " reklám:" + reklam + " sellingquantity2:" + sellingquantity2 +
@@ -235,15 +203,20 @@ public class Logic {
                 System.out.println("storeCar: " + store.getStoreCar());
                 System.out.println("Sikeresen eladtál " + realselling + "db autót! A havi bevételed:" + monthIncom);
 
-                int[] intArray = new int[8];
-                intArray[0] = 1;
+                int[] intArray = new int[13];
+                intArray[0] = 6;
                 intArray[1] = monthAdvertisingCosts;
                 intArray[2] = monthWorkersWages;
                 intArray[3] = (int) randomPlusReklam;
                 intArray[4] = realselling;
                 intArray[5] = monthIncom;
                 intArray[6] = company.getCompanyMoney();
-                intArray[7] = store.getStoreCar();
+                intArray[7] = workers.getWorkersNumber();
+                intArray[8] = store.getStoreWheel();
+                intArray[9] = store.getStoreChasis();
+                intArray[10] = store.getStoreEngin();
+                intArray[11] = store.getStoreCar();
+                intArray[12] = advertisement.getAdvertisementNumber();
 
                 return intArray;
 
@@ -254,13 +227,31 @@ public class Logic {
 
        int[] intArray = new int[7];
        intArray[0] = 6;
-       //intArray[1] = monthAdvertisingCosts;
-       //intArray[2] = monthWorkersWages;
-      // intArray[3] = (int) randomPlusReklam;
-       //intArray[4] = realselling;
-      // intArray[5] = monthIncom;
+       intArray[1] = monthAdvertisingCosts;
+       intArray[2] = monthWorkersWages;
+       intArray[3] = (int) randomPlusReklam;
+       intArray[4] = realselling;
+       intArray[5] = monthIncom;
        intArray[6] = company.getCompanyMoney();
 
        return intArray;
+    }
+
+    int[] everyArray = new int[13];
+    public int[] everyData() {
+        everyArray[0] = 6;
+        everyArray[1] = monthAdvertisingCosts;
+        everyArray[2] = monthWorkersWages;
+        everyArray[3] = (int) randomPlusReklam;
+        everyArray[4] = realselling;
+        everyArray[5] = monthIncom;
+        everyArray[6] = company.getCompanyMoney();
+        everyArray[7] = workers.getWorkersNumber();
+        everyArray[8] = store.getStoreWheel();
+        everyArray[9] = store.getStoreChasis();
+        everyArray[10] = store.getStoreEngin();
+        everyArray[11] = store.getStoreCar();
+        everyArray[12] = advertisement.getAdvertisementNumber();
+        return everyArray;
     }
 }

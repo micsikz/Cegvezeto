@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SellService } from '../sell.service';
-import { LocaleDataIndex } from '@angular/common/src/i18n/locale_data';
+import { AccountingService } from '../accounting.service';
 
 @Component({
   selector: 'app-sell',
@@ -9,26 +9,20 @@ import { LocaleDataIndex } from '@angular/common/src/i18n/locale_data';
 })
 export class SellComponent implements OnInit {
 
-  constructor(private sellService: SellService) { }
+  constructor(private sellService: SellService, private accounting: AccountingService) { }
 
 
   @Output()
   sendSellIntArray = new EventEmitter<number[]>();
 
-  htmlSellingPrise: number;
+  htmlSellingPrise: number = 0;
   visible: boolean = false;
+  javaCar: number = 0;
 
   sell() {
     this.sellService.sell(this.htmlSellingPrise).subscribe(
       (car: number[]) => {
-        console.log(car[0]);
-        console.log(car[1]);
-        console.log(car[2]);
-        console.log(car[3]);
-        console.log(car[4]);
-        console.log(car[5]);
-        console.log(car[6]);
-        console.log(car[7]);
+        this.javaCar = car[11];
 
         this.sendSellIntArray.next(car);
       }
@@ -36,6 +30,12 @@ export class SellComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.accounting.everyData().subscribe(
+      (data: number[]) => {
+        this.javaCar = data[11];
+      }
+    );
   }
 
 }

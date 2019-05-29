@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdvertisementService } from '../advertisement.service';
+import { AccountingService } from '../accounting.service';
 
 @Component({
   selector: 'app-advertisement',
@@ -8,7 +9,7 @@ import { AdvertisementService } from '../advertisement.service';
 })
 export class AdvertisementComponent implements OnInit {
 
-  constructor(private advertisementService: AdvertisementService) { }
+  constructor(private advertisementService: AdvertisementService, private accounting: AccountingService) { }
 
   javaAdvertisement: number;
   htmlAdvertisement: number;
@@ -32,10 +33,9 @@ export class AdvertisementComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.advertisementService.getAdvertisement().subscribe(
-      (advertisement: number) => {
-        this.javaAdvertisement = advertisement;
-        console.log(this.javaAdvertisement);
+    this.accounting.everyData().subscribe(
+      (data: number[]) => {
+        this.javaAdvertisement = data[12];
       }
     );
   }

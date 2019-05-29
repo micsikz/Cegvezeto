@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductionService } from '../production.service';
+import { AccountingService } from '../accounting.service';
 
 @Component({
   selector: 'app-production',
@@ -8,7 +9,7 @@ import { ProductionService } from '../production.service';
 })
 export class ProductionComponent implements OnInit {
 
-  constructor(private productionService: ProductionService) { }
+  constructor(private productionService: ProductionService, private accounting: AccountingService) { }
 
   @Output()
   sendProductionIntArray = new EventEmitter<number[]>();
@@ -18,7 +19,7 @@ export class ProductionComponent implements OnInit {
   htmlProduction: number;
 
   addCar(car: number[]) {
-    this.javaCar = car[7]
+    this.javaCar = car[7];
 
   }
 
@@ -37,6 +38,12 @@ export class ProductionComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.accounting.everyData().subscribe(
+      (data: number[]) => {
+        this.javaCar = data[11];
+      }
+    );
   }
 
 }

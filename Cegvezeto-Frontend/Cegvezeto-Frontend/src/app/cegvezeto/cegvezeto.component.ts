@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
+import { AccountingService } from '../accounting.service';
 
 @Component({
   selector: 'app-cegvezeto',
@@ -8,7 +9,9 @@ import { GameService } from '../game.service';
 })
 export class CegvezetoComponent implements OnInit {
 
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService, private accounting:AccountingService) { }
+
+  visible: boolean = false;
 
   javaWheel: number;
   htmlWheel: number;
@@ -34,6 +37,7 @@ export class CegvezetoComponent implements OnInit {
     );
   }
 
+
   buyChasis() {
     this.gameService.buyChasis(this.htmlChasis).subscribe(
       (chasis: any) => {
@@ -54,24 +58,12 @@ export class CegvezetoComponent implements OnInit {
 
 
   ngOnInit() {
-    this.gameService.getWheel().subscribe(
-      (wheel: number) => {
-        this.javaWheel = wheel;
-        (console.log(this.javaWheel));
-      }
-    );
 
-    this.gameService.getChasis().subscribe(
-      (chasis: number) => {
-        this.javaChasis = chasis;
-        console.log(this.javaChasis);
-      }
-    );
-
-    this.gameService.getEngin().subscribe(
-      (engin: number) => {
-        this.javaEngin = engin;
-        console.log(this.javaEngin);
+    this.accounting.everyData().subscribe(
+      (data: number[]) => {
+        this.javaWheel = data[8];
+        this.javaChasis = data[9];
+        this.javaEngin = data[10];
       }
     );
 

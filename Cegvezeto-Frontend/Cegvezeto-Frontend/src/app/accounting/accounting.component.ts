@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountingService } from '../accounting.service';
 
 @Component({
   selector: 'app-accounting',
@@ -7,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accounting: AccountingService) { }
 
   visible: false;
-  monthAdvertisingCost: number;
+  monthAdvertisingCost: number = 0;
   monthWorkersWages: number;
   randomPlusReklam: number;
   realSelling: number;
@@ -27,6 +28,18 @@ export class AccountingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.accounting.everyData().subscribe(
+      (data: number[]) => {
+        this.monthAdvertisingCost = data[0];
+        this.monthWorkersWages = data[2];
+        this.randomPlusReklam = data[3];
+        this.realSelling = data[4];
+        this.monthIncome = data[5];
+        this.companyMoney = data[6];
+        console.log(this.monthAdvertisingCost);
+      }
+    );
+
   }
 
 }

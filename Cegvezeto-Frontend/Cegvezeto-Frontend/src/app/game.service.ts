@@ -34,4 +34,5 @@ export class GameService {
     return this.httpClient.get(this.baseUrl + '/ingredient/buy-engin');
   }
 
+
 }
