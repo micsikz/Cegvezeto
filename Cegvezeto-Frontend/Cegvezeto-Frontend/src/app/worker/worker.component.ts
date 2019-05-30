@@ -17,7 +17,7 @@ export class WorkerComponent implements OnInit {
 
   buyWorker() {
     this.workerService.buyWorker(this.htmlWorker).subscribe(
-      (worker: any) => {
+      (worker: number) => {
         console.log(worker);
         this.javaWorker = worker;
       }

@@ -1,14 +1,32 @@
-<app-main></app-main>
-<div>
+<app-main></app-main><br>
+<p class="text">Itt tudod megvásárolni a szükséges alkatrészeket!</p><br>
+<div class="button">
   <input type="number" [(ngModel)]="htmlWheel" name="htmlWheel" min="0">
-  <button (click)="buyWheel()">Buy wheel</button>
+  <button (click)="buyWheel()">Kerék vásárlása</button>
   <input type="number" [(ngModel)]="htmlChasis" name="htmlChasis" min="0">
-  <button (click)="buyChasis()">Buy chasis</button>
+  <button (click)="buyChasis()">Kasztni vásárlása</button>
   <input type="number" [(ngModel)]="htmlEngin" name="htmlEngin" min="0">
-  <button (click)="buyEngin()">Buy engin</button>
-</div>
-<p>javaWheel: {{ javaWheel }} && javaChasis: {{ javaChasis }} && javaEngin: {{ javaEngin }}</p>
+  <button (click)="buyEngin()">Motor vásárlása</button>
+</div><br>
+<p class="text">Raktár készlet</p>
+<div class="table">
+    <table>
+      <tr>
+        <td>Kerék</td>
+        <td>{{ javaWheel }}</td>
+      </tr>
+      <tr>
+          <td>Kasztni</td>
+          <td>{{ javaChasis }}</td>
+      </tr>
+      <tr>
+          <td>Motor</td>
+          <td>{{ javaEngin }}</td>
+      </tr>
+      <tr>    
+    </table>
+    </div>
 
-<div *ngIf="visible">
+<!-- <div *ngIf="visible">
 <app-production (sendProductionIntArray)="add($event)"></app-production>
-</div>
+</div> -->

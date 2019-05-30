@@ -19,6 +19,7 @@ public class Logic {
     double randomPlusReklam;
     int realselling;
     int monthIncom;
+    int maxSellingPrice = (int)((ingredient.getEngin() + ingredient.getChasis() + (ingredient.getWheel())*4)*2.5);
 
     public int hiringWorkers(int n) {
         if(company.getCompanyMoney() >= (workers.getWage()*n)) {
@@ -237,9 +238,9 @@ public class Logic {
        return intArray;
     }
 
-    int[] everyArray = new int[13];
+    int[] everyArray = new int[14];
     public int[] everyData() {
-        everyArray[0] = 6;
+        everyArray[0] = 7;
         everyArray[1] = monthAdvertisingCosts;
         everyArray[2] = monthWorkersWages;
         everyArray[3] = (int) randomPlusReklam;
@@ -252,6 +253,7 @@ public class Logic {
         everyArray[10] = store.getStoreEngin();
         everyArray[11] = store.getStoreCar();
         everyArray[12] = advertisement.getAdvertisementNumber();
+        everyArray[13] = maxSellingPrice;
         return everyArray;
     }
 }

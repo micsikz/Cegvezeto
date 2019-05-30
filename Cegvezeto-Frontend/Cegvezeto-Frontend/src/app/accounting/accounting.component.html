@@ -1,8 +1,31 @@
 <app-main></app-main>
+<p id="elszamolas">Előző havi elszámolás</p>
+<div class="table">
+<table>
+  <tr>
+    <td>Reklámköltség</td>
+    <td>{{ monthAdvertisingCost }}</td>
+  </tr>
+  <tr>
+      <td>Bérköltség</td>
+      <td>{{ monthWorkersWages }}</td>
+  </tr>
+  <tr>
+      <td>Eladási százalék</td>
+      <td>{{ randomPlusReklam }}</td>
+  </tr>
+  <tr>
+      <td>Eladott autók száma</td>
+      <td>{{ realSelling }}</td>
+  </tr>
+  <tr>
+      <td>Havi bevétel</td>
+      <td>{{ monthIncome }}</td>
+  </tr>
+  <tr>
+      <td>Tőke</td>
+      <td>{{ companyMoney }}</td>
+  </tr>
 
-<p>monthAdvertisingCost: {{ monthAdvertisingCost }} </p>
-<p>monthWorkersWages: {{ monthWorkersWages }}</p>
-<p>randomPlusReklam: {{ randomPlusReklam }}</p>
-<p>realSelling: {{ realSelling }}</p>
-<p>monthIncome: {{ monthIncome }}</p>
-<p>companyMoney: {{ companyMoney }}</p>
+</table>
+</div>

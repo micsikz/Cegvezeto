@@ -30,7 +30,7 @@ export class AccountingComponent implements OnInit {
   ngOnInit() {
     this.accounting.everyData().subscribe(
       (data: number[]) => {
-        this.monthAdvertisingCost = data[0];
+        this.monthAdvertisingCost = data[1];
         this.monthWorkersWages = data[2];
         this.randomPlusReklam = data[3];
         this.realSelling = data[4];

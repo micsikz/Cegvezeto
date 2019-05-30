@@ -15,15 +15,19 @@ export class SellComponent implements OnInit {
   @Output()
   sendSellIntArray = new EventEmitter<number[]>();
 
+  @Output()
+  plusDate = new EventEmitter();
+
   htmlSellingPrise: number = 0;
   visible: boolean = false;
   javaCar: number = 0;
+  maxSellingPrice: number = 0;
 
   sell() {
     this.sellService.sell(this.htmlSellingPrise).subscribe(
       (car: number[]) => {
         this.javaCar = car[11];
-
+        this.plusDate.next()
         this.sendSellIntArray.next(car);
       }
     );
@@ -34,6 +38,7 @@ export class SellComponent implements OnInit {
     this.accounting.everyData().subscribe(
       (data: number[]) => {
         this.javaCar = data[11];
+        this.maxSellingPrice = data[13];
       }
     );
   }

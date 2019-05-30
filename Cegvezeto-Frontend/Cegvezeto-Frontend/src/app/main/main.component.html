@@ -3,24 +3,27 @@
     <h3 id="date"> {{ today | date }}</h3>
     <ul class="list">
       <li>
-        <button name="accountingButton" (click)="goToAccounting()">Accounting</button>
+        <button name="accountingButton" (click)="goToAccounting()" class="button">Könyvelés</button>
       </li>
       <li>
-        <button name="advertisementButton" (click)="goToAdvertisement()">Advertisement</button>
+        <button name="advertisementButton" (click)="goToAdvertisement()">Reklám</button>
       </li>
       <li>
-        <button name="ingredientsButton" (click)="goToIngredients()">Ingredients</button>
+        <button name="ingredientsButton" (click)="goToIngredients()">Alkatrészek</button>
       </li>
       <li>
-        <button name="productionButton" (click)="goToProduction()">Production</button>
+        <button name="productionButton" (click)="goToProduction()">Gyártás</button>
       </li>
       <li>
-        <button name="sellButton" (click)="goToSell()">Sell</button>
+        <button name="sellButton" (click)="goToSell()">Eladás</button>
         </li>
       <li>
-        <button name="workerButton" (click)="goToWorker()">Workers</button>
+        <button name="workerButton" (click)="goToWorker()">Dolgozók</button>
           </li>
     </ul>
   </header>
-
+<!--
+  <div>
  <button (click)="plusMonth()">aaaa</button>
+ <app-sell (plusDate)="plusMonth()"></app-sell>
+</div> -->

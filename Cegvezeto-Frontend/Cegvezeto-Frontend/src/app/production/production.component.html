@@ -1,11 +1,11 @@
- <app-main> </app-main>
-<div>
+ <app-main> </app-main><br>
+ <p class="text">Az elkészíthető termékek száma függ, az alkalmazottaid számától!</p>
+<div class="button">
   <input type="number" [(ngModel)]="htmlProduction" name="htmlProduction" min="0">
-  <button (click)="production()">Production</button>
-  <p>javaCar: {{ javaCar }}</p>
-  <p>htmlProduction: {{ htmlProduction }}</p>
-</div>
+  <button (click)="production()">Gyártás</button>
+</div><br>
+<p class="text">Elkészült autóid száma: {{ javaCar }}</p>
 
-<div *ngIf="visible">
+<!-- <div *ngIf="visible">
 <app-sell (sendSellIntArray)="addCar($event)"></app-sell>
-</div>
+</div> -->

@@ -1,8 +1,9 @@
-<app-main></app-main>
-<div>
+<app-main></app-main><br>
+<p class="text">Egy dolgozó egy hónap alatt 30 autót tud összeszerelni!</p>
+<div class="button">
   <input type="number" [(ngModel)]="htmlWorker" name="htmlWorker" min="0">
-  <button (click)="buyWorker()">Hire Worker</button>
-  <button (click)="dismissWorker()">Dismiss Worker</button>
-  <p>javaWorker: {{ javaWorker }}</p>
-  <p>htmlWorker: {{ htmlWorker }}</p>
-</div>
+  <button (click)="buyWorker()">Dolgozó felvétele</button>
+  <button (click)="dismissWorker()">Dolgozó elbocsátása</button>
+</div><br>
+  <p class="text">Alkalmazottaid száma: {{ javaWorker }}</p>
+

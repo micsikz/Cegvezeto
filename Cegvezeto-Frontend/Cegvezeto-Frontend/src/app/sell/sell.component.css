@@ -1,0 +1,11 @@
+.button {
+  display: flex;
+  justify-content: center
+}
+
+.text {
+  font-size: 0,5cm;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}

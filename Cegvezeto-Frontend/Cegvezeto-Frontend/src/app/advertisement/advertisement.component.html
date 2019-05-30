@@ -1,8 +1,10 @@
-<app-main></app-main>
-<div>
+<app-main></app-main><br>
+
+<p class="text">Itt tudsz reklámra költeni. Minden egyes megvásárolt reklám után 5 %-kal nő az eladási arányod. Az eladási arány maximum 100% lehet!</p>
+<div class="advertisement">
   <input type="number" [(ngModel)]="htmlAdvertisement" name="htmlAdvertisement" min="0">
-  <button (click)="buyAdvertisement()">Buy Advertisement</button>
-  <button (click)="sellAdvertisement()">Sell Advertisement</button>
-  <p>javaAdvertisement: {{ javaAdvertisement }}</p>
-  <p>htmlAdvertisement: {{ htmlAdvertisement }}</p>
-</div>
+  <button (click)="buyAdvertisement()">Hiredetés vásárlása</button>
+  <button (click)="sellAdvertisement()">Hirdetés lemondása</button>
+</div><br>
+<p class="text"> Jelenlegi reklám egységed: {{ javaAdvertisement }} </p>
+

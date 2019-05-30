@@ -4,9 +4,9 @@
   padding: 0;
   border: 2px brown;
   overflow: hidden;
-  background-color: rgb(185, 132, 96);
+  background-color: rgb(106, 185, 96);
   display: flex;
-  width: 900px;
+  width: auto;
   margin: auto;
   justify-content: space-around;
 }
