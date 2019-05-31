@@ -23,3 +23,30 @@ table {
   border-collapse: collapse;
   border-style: double;
 }
+
+#chasis {
+  max-width: 150px;
+  max-height: 250px;
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0; bottom: 20px;
+ 
+}
+
+#engine {
+  max-width: 150px;
+  max-height: 250px;
+  margin: auto;
+  position: absolute;
+  left: 10; right: 0; bottom: 20px;
+ 
+}
+
+#wheel {
+  max-width: 150px;
+  max-height: 250px;
+  margin: auto;
+  position: absolute;
+  left: 10; right: 10; bottom: 20px;
+ 
+}

@@ -8,7 +8,18 @@ export class GameService {
 
   constructor(private httpClient: HttpClient) { }
 
+  factoryName: string = '';
+
   public baseUrl: string = '//localhost:8080';
+
+  public getFactoryName() {
+    return this.factoryName;
+  }
+
+  public saveFactoryName(name: any) {
+    this.factoryName = name;
+    return this.factoryName;
+  }
 
   public buyChasis(htmlChasis: number) {
     return this.httpClient.post(this.baseUrl + '/ingredient/buy-chasise', + htmlChasis);

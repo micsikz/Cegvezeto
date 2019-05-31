@@ -27,8 +27,9 @@ export class SellComponent implements OnInit {
     this.sellService.sell(this.htmlSellingPrise).subscribe(
       (car: number[]) => {
         this.javaCar = car[11];
-        this.plusDate.next()
+        this.plusDate.next();
         this.sendSellIntArray.next(car);
+        this.htmlSellingPrise = 0;
       }
     );
   }

@@ -9,10 +9,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Logic {
 
     Company company = new Company(1000000, 0, LocalDate.now());
-    Store store = new Store(16, 16, 16,16);
-    Advertisement advertisement = new Advertisement( 2);
+    Store store = new Store(0, 0, 0,0);
+    Advertisement advertisement = new Advertisement( 0);
     Ingredient ingredient = new Ingredient();
-    Workers workers = new Workers(2, 0);
+    Workers workers = new Workers(0, 0);
 
     int monthAdvertisingCosts;
     int monthWorkersWages;

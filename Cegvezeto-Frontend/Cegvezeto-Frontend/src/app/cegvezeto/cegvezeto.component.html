@@ -2,11 +2,11 @@
 <p class="text">Itt tudod megvásárolni a szükséges alkatrészeket!</p><br>
 <div class="button">
   <input type="number" [(ngModel)]="htmlWheel" name="htmlWheel" min="0">
-  <button (click)="buyWheel()">Kerék vásárlása</button>
+  <button (click)="buyWheel()" class="btn btn-info">Kerék vásárlása</button>
   <input type="number" [(ngModel)]="htmlChasis" name="htmlChasis" min="0">
-  <button (click)="buyChasis()">Kasztni vásárlása</button>
+  <button (click)="buyChasis()" class="btn btn-info">Karosszéria vásárlása</button>
   <input type="number" [(ngModel)]="htmlEngin" name="htmlEngin" min="0">
-  <button (click)="buyEngin()">Motor vásárlása</button>
+  <button (click)="buyEngin()" class="btn btn-info">Motor vásárlása</button>
 </div><br>
 <p class="text">Raktár készlet</p>
 <div class="table">
@@ -16,7 +16,7 @@
         <td>{{ javaWheel }}</td>
       </tr>
       <tr>
-          <td>Kasztni</td>
+          <td>Karosszéria</td>
           <td>{{ javaChasis }}</td>
       </tr>
       <tr>
@@ -25,6 +25,11 @@
       </tr>
       <tr>    
     </table>
+    </div>
+    <div class="pics">
+      <img id="wheel" src="./assets/pictures/wheel.jpg" alt="wheel">
+      <img id="chasis" src="./assets/pictures/chasis.jpg" alt="chasis">
+      <img id="engine" src="./assets/pictures/engine.jpg" alt="engine">
     </div>
 
 <!-- <div *ngIf="visible">

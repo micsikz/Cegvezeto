@@ -18,3 +18,12 @@ table {
   display: flex;
   justify-content: center;
 }
+
+.pic {
+  width: 100px;
+  height: 125px;
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0; bottom: 20px;
+ 
+}

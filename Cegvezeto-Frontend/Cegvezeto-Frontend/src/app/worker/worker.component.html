@@ -2,8 +2,13 @@
 <p class="text">Egy dolgozó egy hónap alatt 30 autót tud összeszerelni!</p>
 <div class="button">
   <input type="number" [(ngModel)]="htmlWorker" name="htmlWorker" min="0">
-  <button (click)="buyWorker()">Dolgozó felvétele</button>
-  <button (click)="dismissWorker()">Dolgozó elbocsátása</button>
+  <button (click)="buyWorker()" class="btn btn-info">Dolgozó felvétele</button>
+  <button (click)="dismissWorker()" class="btn btn-danger">Dolgozó elbocsátása</button>
 </div><br>
   <p class="text">Alkalmazottaid száma: {{ javaWorker }}</p>
+
+  <div class="pics">
+    <img id="worker" src="./assets/pictures/worker.gif" alt="worker">
+    
+  </div>
 

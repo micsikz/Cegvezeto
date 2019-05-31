@@ -11,7 +11,7 @@ export class WorkerComponent implements OnInit {
   constructor(private workerService: WorkerService) { }
 
   javaWorker: number;
-  htmlWorker: number;
+  htmlWorker: number = 0;
   
 
 
@@ -20,6 +20,7 @@ export class WorkerComponent implements OnInit {
       (worker: number) => {
         console.log(worker);
         this.javaWorker = worker;
+        this.htmlWorker = 0;
       }
     );
   }
@@ -29,6 +30,7 @@ export class WorkerComponent implements OnInit {
       (worker: any) => {
         console.log(worker);
         this.javaWorker = worker;
+        this.htmlWorker = 0;
       }
     );
   }

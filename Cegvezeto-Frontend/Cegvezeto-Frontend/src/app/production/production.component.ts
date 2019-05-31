@@ -16,7 +16,7 @@ export class ProductionComponent implements OnInit {
 
   visible: false;
   javaCar: number;
-  htmlProduction: number;
+  htmlProduction: number = 0;
 
   addCar(car: number[]) {
     this.javaCar = car[7];
@@ -32,6 +32,7 @@ export class ProductionComponent implements OnInit {
         console.log(production[3]);
         this.javaCar = production[3];
         this.sendProductionIntArray.next(production);
+        this.htmlProduction = 0;
       }
     );
   }

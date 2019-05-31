@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,9 +10,14 @@ export class MainComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  factoryName: string = "Titkos!"
+
 
   today = new Date();
+
+ /* @Input()
+  factoryName: string;
+*/
+  factoryName: string = "Factory";
 
   plusMonth() {
    this.today = new Date(this.today.getFullYear(), this.today.getMonth() + 1, this.today.getDate());

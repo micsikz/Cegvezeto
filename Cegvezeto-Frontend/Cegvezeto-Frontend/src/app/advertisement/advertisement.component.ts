@@ -12,13 +12,14 @@ export class AdvertisementComponent implements OnInit {
   constructor(private advertisementService: AdvertisementService, private accounting: AccountingService) { }
 
   javaAdvertisement: number;
-  htmlAdvertisement: number;
+  htmlAdvertisement: number = 0
 
   buyAdvertisement() {
     this.advertisementService.buyAdvertisement(this.htmlAdvertisement).subscribe(
       (advertisement: any) => {
         console.log(advertisement);
         this.javaAdvertisement = advertisement;
+        this.htmlAdvertisement = 0;
       }
     );
   }

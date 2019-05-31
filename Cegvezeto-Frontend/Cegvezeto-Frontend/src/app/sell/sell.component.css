@@ -9,3 +9,12 @@
   display: flex;
   justify-content: center;
 }
+
+#sell {
+  max-width: 500px;
+  max-height: 650px;
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0; bottom: 30px;
+ 
+}

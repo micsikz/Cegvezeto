@@ -1,27 +1,29 @@
+<div class="respon">
 <header>
     <h1 class="factoryName"> {{ factoryName }}</h1>
     <h3 id="date"> {{ today | date }}</h3>
     <ul class="list">
       <li>
-        <button name="accountingButton" (click)="goToAccounting()" class="button">Könyvelés</button>
+        <button name="accountingButton" (click)="goToAccounting()" class="btn btn-success">Könyvelés</button>
       </li>
       <li>
-        <button name="advertisementButton" (click)="goToAdvertisement()">Reklám</button>
+        <button name="advertisementButton" (click)="goToAdvertisement()" class="btn btn-success">Reklám</button>
       </li>
       <li>
-        <button name="ingredientsButton" (click)="goToIngredients()">Alkatrészek</button>
+        <button name="ingredientsButton" (click)="goToIngredients()" class="btn btn-success">Alkatrészek</button>
       </li>
       <li>
-        <button name="productionButton" (click)="goToProduction()">Gyártás</button>
+        <button name="productionButton" (click)="goToProduction()" class="btn btn-success">Gyártás</button>
       </li>
       <li>
-        <button name="sellButton" (click)="goToSell()">Eladás</button>
+        <button name="sellButton" (click)="goToSell()" class="btn btn-success">Eladás</button>
         </li>
       <li>
-        <button name="workerButton" (click)="goToWorker()">Dolgozók</button>
+        <button name="workerButton" (click)="goToWorker()" class="btn btn-success">Dolgozók</button>
           </li>
     </ul>
   </header>
+</div>
 <!--
   <div>
  <button (click)="plusMonth()">aaaa</button>

@@ -2,10 +2,14 @@
  <p class="text">Az elkészíthető termékek száma függ, az alkalmazottaid számától!</p>
 <div class="button">
   <input type="number" [(ngModel)]="htmlProduction" name="htmlProduction" min="0">
-  <button (click)="production()">Gyártás</button>
+  <button (click)="production()" class="btn btn-info">Gyártás</button>
 </div><br>
 <p class="text">Elkészült autóid száma: {{ javaCar }}</p>
 
+<div class="pics">
+  <img id="production" src="./assets/pictures/production.jpg" alt="production">
+  
+</div>
 <!-- <div *ngIf="visible">
 <app-sell (sendSellIntArray)="addCar($event)"></app-sell>
 </div> -->

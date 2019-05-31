@@ -1,10 +1,14 @@
 <app-main></app-main><br>
 <p class="text">Itt eladhatod a már elkészített termékeidet! Az eladás után új hónap következik. Ekkor frissül a könyvelés oldal is!Ne feledd, minél több reklámot vásárolsz, annál több autót fogsz tudni eladni!</p>
 <div class="button">
-  <input type="number" [(ngModel)]="htmlSellingPrise" name="htmlSellingPrise" min="0">
-  <button (click)="sell()" [disabled]="maxSellingPrice < htmlSellingPrice">Eladás</button>
+  <input type="number" [(ngModel)]="htmlSellingPrise" name="htmlSellingPrise" min="0" max="3125">
+  <button (click)="sell()" class="btn btn-info">Eladás</button>
   
 </div><br>
 <p class="text">Eddig legyártott autóid száma: {{ javaCar}}</p>
 
 <p class="text">Maximális eladási ár: {{ maxSellingPrice }} Fabatka lehet!</p>
+<div class="pics">
+  <img id="sell" src="./assets/pictures/sell.gif" alt="production">
+  
+</div>

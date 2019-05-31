@@ -14,13 +14,13 @@ export class CegvezetoComponent implements OnInit {
   visible: boolean = false;
 
   javaWheel: number;
-  htmlWheel: number;
+  htmlWheel: number = 0;
 
   javaChasis: number;
-  htmlChasis: number;
+  htmlChasis: number = 0;
 
   javaEngin: number;
-  htmlEngin: number;
+  htmlEngin: number = 0;
 
   add(value: number[]) {
     this.javaWheel = value[0];
@@ -33,6 +33,7 @@ export class CegvezetoComponent implements OnInit {
       (wheel: any) => {
         console.log(wheel);
         this.javaWheel = wheel;
+        this.htmlWheel = 0;
       }
     );
   }
@@ -43,6 +44,7 @@ export class CegvezetoComponent implements OnInit {
       (chasis: any) => {
         console.log(chasis);
         this.javaChasis = chasis;
+        this.htmlChasis = 0;
       }
     );
   }
@@ -52,6 +54,7 @@ export class CegvezetoComponent implements OnInit {
       (engin: any) => {
         console.log(engin);
         this.javaEngin = engin;
+        this.htmlEngin = 0;
       }
     );
   }

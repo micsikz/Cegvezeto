@@ -12,6 +12,7 @@ import { ProductionComponent } from './production/production.component';
 import { SellComponent } from './sell/sell.component';
 import { AccountingComponent } from './accounting/accounting.component';
 import { MainComponent } from './main/main.component';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MainComponent } from './main/main.component';
     ProductionComponent,
     SellComponent,
     AccountingComponent,
-    MainComponent
+    MainComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
