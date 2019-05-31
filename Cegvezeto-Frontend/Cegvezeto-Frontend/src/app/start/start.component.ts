@@ -11,17 +11,17 @@ export class StartComponent implements OnInit {
 
   constructor(private router: Router, private gameService: GameService) { }
 
-  factoryName: any;
+  factoryName: any = '';
 
 
 
   start() {
     this.router.navigate(['main']);
-    //this.gameService.saveFactoryName(this.factoryName).subscribe
+    this.gameService.saveFactoryName(this.factoryName);
   }
 
   ngOnInit() {
-  
+
   }
 
 }

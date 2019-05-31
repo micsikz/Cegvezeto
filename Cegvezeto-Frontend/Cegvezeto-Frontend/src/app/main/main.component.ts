@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private gameService: GameService) { }
 
 
 
@@ -17,7 +18,7 @@ export class MainComponent implements OnInit {
  /* @Input()
   factoryName: string;
 */
-  factoryName: string = "Factory";
+  factoryName: string = "";
 
   plusMonth() {
    this.today = new Date(this.today.getFullYear(), this.today.getMonth() + 1, this.today.getDate());
@@ -48,6 +49,9 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.gameService.getFactoryName();
+    this.factoryName = this.gameService.getFactoryName();
   }
 
 }
